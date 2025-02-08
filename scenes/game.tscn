@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci61hs1ppmrbb"]
+[gd_scene load_steps=9 format=3 uid="uid://ci61hs1ppmrbb"]
 
-[ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="1_2ce7d"]
-[ext_resource type="Script" path="res://input.gd" id="1_gkquu"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_8s3ah"]
+[ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="3_k8pxv"]
+[ext_resource type="Script" path="res://scripts/input.gd" id="4_j06qb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxl4y"]
 bg_color = Color(0.118581, 0.118581, 0.118581, 1)
@@ -23,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8s3ah")
 
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -49,6 +51,13 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_v4cue")
 
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/MarginContainer/Rows/GameInfo"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="HistoryRows" type="VBoxContainer" parent="Background/MarginContainer/Rows/GameInfo/ScrollContainer"]
+layout_mode = 2
+
 [node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
@@ -59,16 +68,19 @@ layout_mode = 2
 
 [node name="Caret" type="Label" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_2ce7d")
+theme_override_fonts/font = ExtResource("3_k8pxv")
 theme_override_font_sizes/font_size = 24
 text = " > "
 
 [node name="Input" type="LineEdit" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_2ce7d")
+theme_override_fonts/font = ExtResource("3_k8pxv")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx0ev")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_p1nom")
 max_length = 36
-script = ExtResource("1_gkquu")
+script = ExtResource("4_j06qb")
+
+[connection signal="text_submitted" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="." method="_on_input_text_submitted"]
+[connection signal="text_submitted" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" method="_on_text_submitted"]
