@@ -1,20 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx37kddntghtv"]
+[gd_scene load_steps=4 format=3 uid="uid://bx37kddntghtv"]
 
-[ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="1_1vpsu"]
 [ext_resource type="Script" path="res://scripts/input_response.gd" id="1_13d7v"]
+[ext_resource type="PackedScene" uid="uid://dbexhmqfmn2xo" path="res://scenes/input_history.tscn" id="2_18uft"]
+[ext_resource type="PackedScene" uid="uid://djeqt2indprdk" path="res://scenes/response.tscn" id="3_r2lxd"]
 
 [node name="InputResponse" type="VBoxContainer"]
 script = ExtResource("1_13d7v")
 
-[node name="InputHistory" type="Label" parent="."]
+[node name="InputHistory" parent="." instance=ExtResource("2_18uft")]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
-theme_override_fonts/font = ExtResource("1_1vpsu")
-theme_override_font_sizes/font_size = 16
-text = " > this is what user typed"
 
-[node name="Response" type="Label" parent="."]
+[node name="Response" parent="." instance=ExtResource("3_r2lxd")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_1vpsu")
-theme_override_font_sizes/font_size = 20
-text = "this is what the game will give back"
