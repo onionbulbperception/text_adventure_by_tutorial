@@ -1,6 +1,5 @@
 extends Control
 
-
 const Responce = preload("res://scenes/response.tscn")
 const InputResponse = preload("res://scenes/input_response.tscn")
 
@@ -15,14 +14,17 @@ var max_scroll_length := 0
 @onready var history_rows = $Background/MarginContainer/Rows/GameInfo/Scroll/HistoryRows
 @onready var scroll = $Background/MarginContainer/Rows/GameInfo/Scroll
 @onready var scrollbar = scroll.get_v_scroll_bar()
+@onready var room_manager = $RoomManager
 
 
 func _ready() -> void:
 	scrollbar.connect("changed", handle_scrollbar_changed)
 	max_scroll_length = scrollbar.max_value
-	var starting_message = Responce.instantiate()
-	starting_message.text = "You find yourself in a house, with no memory of how you got there. You need to find your way out. You can type 'help' to see your available commands."
-	add_responce_to_game(starting_message)
+	
+	handle_responce_generated("Welcome to the retro text adventure! You can type 'help' to see available commands.")
+	
+	command_processor.connect("responce_generated", handle_responce_generated)
+	command_processor.initialize(room_manager.get_child(0))
 
 
 func handle_scrollbar_changed():
@@ -42,6 +44,12 @@ func _on_input_text_submitted(new_text: String) -> void:
 	var responce = command_processor.process_command(new_text)
 	input_responce.set_text(new_text, responce)
 	add_responce_to_game(input_responce)
+
+
+func handle_responce_generated(responce_text):
+	var responce = Responce.instantiate()
+	responce.text = responce_text
+	add_responce_to_game(responce)
 
 
 func add_responce_to_game(responce: Control):

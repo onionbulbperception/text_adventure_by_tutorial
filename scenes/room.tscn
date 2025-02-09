@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://boo6ilnbvv3v"]
+
+[ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="1_1ylsb"]
+[ext_resource type="Script" path="res://scripts/game_room.gd" id="1_w2kdp"]
+
+[node name="Room" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 150)
+offset_right = 400.0
+offset_bottom = 150.0
+script = ExtResource("1_w2kdp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="RoomName" type="Label" parent="MarginContainer/Rows"]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1ylsb")
+theme_override_font_sizes/font_size = 24
+text = "Room Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoomDescription" type="Label" parent="MarginContainer/Rows"]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1ylsb")
+theme_override_font_sizes/font_size = 16
+text = "This is the description of the room."
+autowrap_mode = 2
