@@ -21,10 +21,10 @@ func _ready() -> void:
 	scrollbar.connect("changed", handle_scrollbar_changed)
 	max_scroll_length = scrollbar.max_value
 	
-	handle_responce_generated("Welcome to the retro text adventure! You can type 'help' to see available commands.")
+	create_responce("Welcome to the retro text adventure! You can type 'help' to see available commands.")
 	
-	command_processor.connect("responce_generated", handle_responce_generated)
-	command_processor.initialize(room_manager.get_child(0))
+	var starting_room_responce = command_processor.initialize(room_manager.get_child(0))
+	create_responce(starting_room_responce)
 
 
 func handle_scrollbar_changed():
@@ -46,7 +46,7 @@ func _on_input_text_submitted(new_text: String) -> void:
 	add_responce_to_game(input_responce)
 
 
-func handle_responce_generated(responce_text):
+func create_responce(responce_text):
 	var responce = Responce.instantiate()
 	responce.text = responce_text
 	add_responce_to_game(responce)
