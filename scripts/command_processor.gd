@@ -47,11 +47,11 @@ func help() -> String:
 
 func change_room(new_room: GameRoom) -> String:
 	current_room = new_room
-	var exit_string = PackedStringArray(new_room.exits.keys())
-	var exits = " ".join(exit_string)
-	var strings = PackedStringArray([
-		"You are now in: " + new_room.room_name + ". It is " + new_room.room_description,
-		"Exits: " + exits,
-	])
-	var string = "\n".join(strings)
-	return string
+	#var exit_string = PackedStringArray(new_room.exits.keys())
+	#var exits = " ".join(exit_string)
+	#var strings = PackedStringArray([
+	#	"You are now in: " + new_room.room_name + ". It is " + new_room.room_description,
+	#	"Exits: " + exits,
+	#])
+	#var string = "\n".join(strings)
+	return new_room.get_full_description()
