@@ -15,6 +15,7 @@ var max_scroll_length := 0
 @onready var scroll = $Background/MarginContainer/Rows/GameInfo/Scroll
 @onready var scrollbar = scroll.get_v_scroll_bar()
 @onready var room_manager = $RoomManager
+@onready var player = $Player
 
 
 func _ready() -> void:
@@ -23,7 +24,7 @@ func _ready() -> void:
 	
 	create_responce("Welcome to the retro text adventure! You can type 'help' to see available commands.")
 	
-	var starting_room_responce = command_processor.initialize(room_manager.get_child(0))
+	var starting_room_responce = command_processor.initialize(room_manager.get_child(0), player)
 	create_responce(starting_room_responce)
 
 

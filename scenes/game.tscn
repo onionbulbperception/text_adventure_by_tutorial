@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ci61hs1ppmrbb"]
+[gd_scene load_steps=13 format=3 uid="uid://ci61hs1ppmrbb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_8s3ah"]
 [ext_resource type="Script" path="res://scripts/command_processor.gd" id="2_1t0v8"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_2kw4x"]
 [ext_resource type="PackedScene" uid="uid://boo6ilnbvv3v" path="res://scenes/room.tscn" id="3_4jirj"]
 [ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="3_k8pxv"]
 [ext_resource type="Script" path="res://scripts/room_manager.gd" id="3_kjrjv"]
@@ -28,6 +29,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8s3ah")
+
+[node name="Player" type="Node" parent="."]
+script = ExtResource("2_2kw4x")
 
 [node name="CommandProcessor" type="Node" parent="."]
 script = ExtResource("2_1t0v8")
