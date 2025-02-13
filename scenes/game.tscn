@@ -53,6 +53,14 @@ offset_bottom = -60.0
 room_name = "outside"
 room_description = "outside in a village."
 
+[node name="ShedRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
+offset_left = 501.0
+offset_top = -476.0
+offset_right = 901.0
+offset_bottom = -326.0
+room_name = "a shed"
+room_description = "a dusty old shed used for storage."
+
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15

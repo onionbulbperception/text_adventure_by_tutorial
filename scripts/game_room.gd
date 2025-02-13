@@ -59,10 +59,19 @@ func get_exit_description() -> String:
 	return "Exits: " +  " ".join(exit_string)
 
 
-func connect_exit(direction: String, room: GameRoom):
+func connect_exit_unlocked(direction: String, room: GameRoom):
+	_connect_exit(direction, room, false)
+
+
+func connect_exit_locked(direction: String, room: GameRoom):
+	_connect_exit(direction, room, true)
+
+
+func _connect_exit(direction: String, room: GameRoom, is_locked: bool = false):
 	var exit = Exit.new()
 	exit.room_1 = self
 	exit.room_2 = room
+	exit.room_2_is_locked = is_locked
 	exits[direction] = exit
 	match direction:
 		"west":
