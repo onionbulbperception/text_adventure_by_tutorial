@@ -40,76 +40,77 @@ script = ExtResource("2_1t0v8")
 script = ExtResource("3_kjrjv")
 
 [node name="ShedRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 1309.0
-offset_top = -192.0
-offset_right = 1709.0
-offset_bottom = -42.0
+offset_left = 1294.0
+offset_top = -262.0
+offset_right = 1694.0
+offset_bottom = -33.0
 room_name = "a shed"
-room_description = "a shed"
+room_description = "An old, weathered structure at the edge of town, filled with 
+farming tools and supplies. There is a door to the inn and some storage crates to the west."
 
 [node name="BackOfInnRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 793.0
-offset_top = -189.0
-offset_right = 1249.0
-offset_bottom = -39.0
+offset_left = 811.0
+offset_top = -270.0
+offset_right = 1267.0
+offset_bottom = -20.0
 room_name = "the back of the inn"
-room_description = "the back of the inn"
+room_description = "A quieter, more secluded area, used as storage for the inn. There is a door to the north that leads to the inn, and a path that goes to the village square."
 
 [node name="InnsKitchenRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 791.0
-offset_top = -386.0
-offset_right = 1247.0
-offset_bottom = -236.0
+offset_left = 803.0
+offset_top = -577.0
+offset_right = 1259.0
+offset_bottom = -285.0
 room_name = "the inn's kitchen"
-room_description = "the inn's kitchen"
+room_description = "The heart of the inn. The cook isn't anuwhere to be found - the room is empty, byt pots  simmer, pans sizzle, and aromas of delicious food fill the air. There is a door on the south wall that seems to go outside, and a door to the north back to the inn proper."
 
 [node name="InnRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 789.0
-offset_top = -574.0
-offset_right = 1245.0
-offset_bottom = -424.0
+offset_left = 815.0
+offset_top = -884.0
+offset_right = 1271.0
+offset_bottom = -592.0
 room_name = "the inn"
-room_description = "the inn"
+room_description = "Warm and inviting, the inn boasts a roaring fireplace, long wooden tables, and drunk patrons chugging local ale. The inkeeper is standing behind the bar, waiting to serve customers. The is a door to the kitchen to the south, and a door back to the village square to the west."
 
 [node name="InnDoorRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 301.0
-offset_top = -574.0
-offset_right = 757.0
-offset_bottom = -424.0
+offset_left = 332.0
+offset_top = -880.0
+offset_right = 788.0
+offset_bottom = -714.0
 room_name = "the inn door"
-room_description = "the inn door"
+room_description = "A creaky wooden entrance to the inn, filled with  laughter and clinking glasses. A sign outside says \"The Happy Chungus\""
 
 [node name="VillageSquareRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = -179.0
-offset_top = -576.0
-offset_right = 277.0
-offset_bottom = -426.0
+offset_left = -160.0
+offset_top = -884.0
+offset_right = 296.0
+offset_bottom = -676.0
 room_name = "the village square"
-room_description = "the village square"
+room_description = "The main square of the village, lined with quaint houses. To the south is the shed and back of the inn. The main inn door is to the east, and there is a field to the west."
 
 [node name="FieldRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = -648.0
-offset_top = -581.0
-offset_right = -192.0
-offset_bottom = -431.0
+offset_left = -673.0
+offset_top = -882.0
+offset_right = -217.0
+offset_bottom = -732.0
 room_name = "a field"
-room_description = "a field"
+room_description = "A vast expanse of open land next to the village. The village is back to the east."
 
 [node name="TownGateRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = -177.0
-offset_top = -774.0
-offset_right = 279.0
-offset_bottom = -624.0
+offset_left = -171.0
+offset_top = -1173.0
+offset_right = 285.0
+offset_bottom = -923.0
 room_name = "the town gate"
-room_description = "the town gate"
+room_description = "The main entrance to the village, guarded by towering stone walls. It leads out to the forest to the north. A guard stands nearby a sturdy wooden gate watching everyone who comes by. The village is back toward the south."
 
 [node name="ForestRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = -182.0
-offset_top = -952.0
-offset_right = 274.0
-offset_bottom = -802.0
+offset_left = -166.0
+offset_top = -1498.0
+offset_right = 290.0
+offset_bottom = -1227.0
 room_name = "the forest"
-room_description = "the forest"
+room_description = "A dense, mysterious woodland filled with ancient trees and  hidden paths. Whispers of adventure echo through its depths. But... Congratulations! You've made it out of the town... Your journey may continue in the future!"
 
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
