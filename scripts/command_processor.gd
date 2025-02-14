@@ -31,11 +31,12 @@ func process_command(input: String) -> String:
 			return inventory()
 		"use":
 			return use(second_word)
+		"talk":
+			return talk(second_word)
 		"help":
 			return help()
 		_:
 			return "Unrecognized command - please try again."
-			
 
 
 func go(second_word: String) -> String:
@@ -98,6 +99,17 @@ func use(second_word) -> String:
 					return "Error - tried to use an item with an invalid type."
 	
 	return "You don't have that item."
+
+
+func talk(second_word: String) -> String:
+	if second_word == "":
+		return "Talk to whom?"
+	
+	for npc in current_room.npcs:
+		if npc.npc_name.to_lower() == second_word:
+			return npc.npc_name + ": \"" + npc.initial_dialog + "\""
+	
+	return "That person does not exist in this room."
 
 
 func help() -> String:

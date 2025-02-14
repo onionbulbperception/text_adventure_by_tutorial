@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=2 format=3 uid="uid://c1mpe5m8c2huj"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_g0w8c"]
+
+[resource]
+script = ExtResource("1_g0w8c")
+npc_name = "innkeeper"
+initial_dialog = "Greetings traveler! Welcome to the Happy Chungus. Rooms, meals, and tales await, but there's an urgent matter. A valuable item has been lost and the guard at the city gate needs help finding it. Any leads? The guard will reward you if you succeed."
+post_quest_dialog = ""

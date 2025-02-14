@@ -62,7 +62,7 @@ offset_top = -577.0
 offset_right = 1259.0
 offset_bottom = -285.0
 room_name = "the inn's kitchen"
-room_description = "The heart of the inn. The cook isn't anuwhere to be found - the room is empty, byt pots  simmer, pans sizzle, and aromas of delicious food fill the air. There is a door on the south wall that seems to go outside, and a door to the north back to the inn proper."
+room_description = "The heart of the inn. The cook isn't anywhere to be found - the room is empty, but pots  simmer, pans sizzle, and aromas of delicious food fill the air. There is a door on the south wall that seems to go outside, and a door to the north back to the inn proper."
 
 [node name="InnRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
 offset_left = 815.0
@@ -70,7 +70,7 @@ offset_top = -884.0
 offset_right = 1271.0
 offset_bottom = -592.0
 room_name = "the inn"
-room_description = "Warm and inviting, the inn boasts a roaring fireplace, long wooden tables, and drunk patrons chugging local ale. The inkeeper is standing behind the bar, waiting to serve customers. The is a door to the kitchen to the south, and a door back to the village square to the west."
+room_description = "Warm and inviting, the inn boasts a roaring fireplace, long wooden tables, and drunk patrons chugging local ale. The inkeeper is standing behind the bar, waiting to serve customers. There is a door to the kitchen to the south, and a door back to the village square to the west."
 
 [node name="InnDoorRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
 offset_left = 332.0
@@ -86,7 +86,7 @@ offset_top = -884.0
 offset_right = 296.0
 offset_bottom = -676.0
 room_name = "the village square"
-room_description = "The main square of the village, lined with quaint houses. To the south is the shed and back of the inn. The main inn door is to the east, and there is a field to the west."
+room_description = "The main square of the village, lined with quaint houses. To the south is the path. The main inn door is to the east, and there is a field to the west."
 
 [node name="FieldRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
 offset_left = -673.0

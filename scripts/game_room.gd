@@ -8,6 +8,7 @@ class_name GameRoom
 
 
 var exits: Dictionary = {}
+var npcs: Array = []
 var items: Array = []
 
 
@@ -21,6 +22,10 @@ func set_room_description(new_description: String):
 	room_description = new_description
 
 
+func add_npc(npc: NPC):
+	npcs.append(npc)
+
+
 func add_item(item: Item):
 	items.append(item)
 
@@ -30,11 +35,17 @@ func remove_item(item: Item):
 
 
 func get_full_description() -> String:
-	var description = PackedStringArray([
-		get_room_description(),
-		get_item_description(),
-		get_exit_description(),
-	])
+	var description = PackedStringArray([get_room_description()])
+	
+	var npc_description = get_npc_description()
+	if npc_description != "":
+		description.append(npc_description)
+	
+	var item_description = get_item_description()
+	description.append(get_exit_description())
+	if item_description != "":
+		description.append(item_description)
+	
 	var full_description = "\n".join(description)
 	return full_description
 
@@ -43,9 +54,19 @@ func get_room_description() -> String:
 	return "You are now in: " + room_name + ". It is " + room_description
 
 
+func get_npc_description() -> String:
+	if npcs.size() == 0:
+		return ""
+	var npc_string = ""
+	for npc in npcs:
+		npc_string += npc.npc_name + " "
+	
+	return "NPCs: " + npc_string
+
+
 func get_item_description() -> String:
 	if items.size() == 0:
-		return "No items to pick up."
+		return ""
 	
 	var item_string = ""
 	for item in items:
@@ -91,7 +112,7 @@ func _connect_exit(direction: String, room: GameRoom, is_locked: bool = false, r
 			"inside":
 				room.exits["outside"] = exit
 			"outside":
-				room.exits["indise"] = exit
+				room.exits["inside"] = exit
 			_:
 				printerr("Tried to connect invalid direction: %s", direction)
 	return exit

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NPC" load_steps=2 format=3 uid="uid://i4al4u5vip45"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_dl3bf"]
+
+[resource]
+script = ExtResource("1_dl3bf")
+npc_name = "guard"
+initial_dialog = "Ah, another day in the life of a guard. Halt traveler! I can't let you pass until a lost sword is found in the fields to the west of the village. It's of great importance and has gone missing. If you find it, you may pass. But honestly, I don't have much hope left."
+post_quest_dialog = "Ah, well traveler, it seems that you have found the lost sword! Thank you for your help. You may now pass through into the forest. The village owes you a debt of gratitude! It's not often that someone comes along to help these days... It feels like a different era somehow."
