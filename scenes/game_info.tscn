@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bisxee73hdwoq"]
+
+[ext_resource type="Script" path="res://scripts/game_info.gd" id="1_2bpcd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4cue"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 1)
+
+[node name="GameInfo" type="PanelContainer"]
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v4cue")
+script = ExtResource("1_2bpcd")
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="HistoryRows" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+theme_override_constants/separation = 20

@@ -7,12 +7,10 @@
 [ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="3_k8pxv"]
 [ext_resource type="Script" path="res://scripts/room_manager.gd" id="3_kjrjv"]
 [ext_resource type="Script" path="res://scripts/input.gd" id="4_j06qb"]
+[ext_resource type="PackedScene" uid="uid://bisxee73hdwoq" path="res://scenes/game_info.tscn" id="6_nlqif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxl4y"]
 bg_color = Color(0.118581, 0.118581, 0.118581, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4cue"]
-bg_color = Color(0.176471, 0.176471, 0.176471, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebuqv"]
 bg_color = Color(0.313726, 0.313726, 0.313726, 1)
@@ -132,18 +130,8 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="GameInfo" type="PanelContainer" parent="Background/MarginContainer/Rows"]
+[node name="GameInfo" parent="Background/MarginContainer/Rows" instance=ExtResource("6_nlqif")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_v4cue")
-
-[node name="Scroll" type="ScrollContainer" parent="Background/MarginContainer/Rows/GameInfo"]
-layout_mode = 2
-horizontal_scroll_mode = 0
-
-[node name="HistoryRows" type="VBoxContainer" parent="Background/MarginContainer/Rows/GameInfo/Scroll"]
-layout_mode = 2
-theme_override_constants/separation = 20
 
 [node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
 custom_minimum_size = Vector2(0, 60)
