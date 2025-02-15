@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="1_1ylsb"]
 [ext_resource type="Script" path="res://scripts/game_room.gd" id="1_w2kdp"]
 
-[node name="Room" type="PanelContainer"]
+[node name="GameRoom" type="PanelContainer"]
 custom_minimum_size = Vector2(300, 150)
 offset_right = 400.0
 offset_bottom = 150.0
