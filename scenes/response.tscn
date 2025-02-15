@@ -2,9 +2,12 @@
 
 [ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="1_2uf0u"]
 
-[node name="Response" type="Label"]
+[node name="Response" type="RichTextLabel"]
 custom_minimum_size = Vector2(1100, 0)
-theme_override_fonts/font = ExtResource("1_2uf0u")
-theme_override_font_sizes/font_size = 20
+offset_right = 1100.0
+offset_bottom = 23.0
+theme_override_fonts/normal_font = ExtResource("1_2uf0u")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
 text = "this is what the game will give back"
-autowrap_mode = 3
+fit_content = true
