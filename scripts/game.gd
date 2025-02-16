@@ -1,12 +1,16 @@
 extends Control
 
-@onready var game_info = $Background/MarginContainer/Rows/GameInfo
+@onready var game_info = $Background/MarginContainer/Columns/Rows/GameInfo
 @onready var command_processor = $CommandProcessor
 @onready var room_manager = $RoomManager
 @onready var player = $Player
 
 
 func _ready() -> void:
+	var side_panel = $Background/MarginContainer/Columns/SidePanel
+	command_processor.room_changed.connect(Callable(side_panel, "handle_room_changed"))
+	command_processor.room_updated.connect(Callable(side_panel, "handle_room_updated"))
+	
 	game_info.create_response(Types.wrap_system_text("Welcome to the retro text adventure! You can type 'help' to see available commands."))
 	
 	var starting_room_response = command_processor.initialize(room_manager.get_child(0), player)

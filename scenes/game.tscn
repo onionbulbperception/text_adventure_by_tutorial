@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ci61hs1ppmrbb"]
+[gd_scene load_steps=14 format=3 uid="uid://ci61hs1ppmrbb"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_8s3ah"]
 [ext_resource type="Script" path="res://scripts/command_processor.gd" id="2_1t0v8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/room_manager.gd" id="3_kjrjv"]
 [ext_resource type="Script" path="res://scripts/input.gd" id="4_j06qb"]
 [ext_resource type="PackedScene" uid="uid://bisxee73hdwoq" path="res://scenes/game_info.tscn" id="6_nlqif"]
+[ext_resource type="PackedScene" uid="uid://c5vv0hhb12aou" path="res://scenes/side_panel.tscn" id="9_75o5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxl4y"]
 bg_color = Color(0.118581, 0.118581, 0.118581, 1)
@@ -126,28 +127,33 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Rows" type="VBoxContainer" parent="Background/MarginContainer"]
+[node name="Columns" type="HBoxContainer" parent="Background/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="GameInfo" parent="Background/MarginContainer/Rows" instance=ExtResource("6_nlqif")]
+[node name="Rows" type="VBoxContainer" parent="Background/MarginContainer/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="GameInfo" parent="Background/MarginContainer/Columns/Rows" instance=ExtResource("6_nlqif")]
 layout_mode = 2
 
-[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Rows"]
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Columns/Rows"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ebuqv")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/Rows/InputArea"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer/Columns/Rows/InputArea"]
 layout_mode = 2
 
-[node name="Caret" type="Label" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+[node name="Caret" type="Label" parent="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_k8pxv")
 theme_override_font_sizes/font_size = 24
 text = " > "
 
-[node name="Input" type="LineEdit" parent="Background/MarginContainer/Rows/InputArea/HBoxContainer"]
+[node name="Input" type="LineEdit" parent="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3_k8pxv")
@@ -157,5 +163,8 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_p1nom")
 max_length = 36
 script = ExtResource("4_j06qb")
 
-[connection signal="text_submitted" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="." method="_on_input_text_submitted"]
-[connection signal="text_submitted" from="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Rows/InputArea/HBoxContainer/Input" method="_on_text_submitted"]
+[node name="SidePanel" parent="Background/MarginContainer/Columns" instance=ExtResource("9_75o5y")]
+layout_mode = 2
+
+[connection signal="text_submitted" from="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" to="." method="_on_input_text_submitted"]
+[connection signal="text_submitted" from="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" method="_on_text_submitted"]

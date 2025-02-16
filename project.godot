@@ -18,6 +18,11 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 
 Types="*res://scripts/globals/types.gd"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
