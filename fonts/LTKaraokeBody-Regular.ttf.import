@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://2c4lklsj37yx"
-path="res://.godot/imported/Xanmono.ttf-e01cc967b4a36a208b104f58d92cb88b.fontdata"
+uid="uid://cvjwfnon01ipb"
+path="res://.godot/imported/LTKaraokeBody-Regular.ttf-3dc396a7f662ebe7081b9050feaf5719.fontdata"
 
 [deps]
 
-source_file="res://fonts/Xanmono.ttf"
-dest_files=["res://.godot/imported/Xanmono.ttf-e01cc967b4a36a208b104f58d92cb88b.fontdata"]
+source_file="res://fonts/LTKaraokeBody-Regular.ttf"
+dest_files=["res://.godot/imported/LTKaraokeBody-Regular.ttf-3dc396a7f662ebe7081b9050feaf5719.fontdata"]
 
 [params]
 

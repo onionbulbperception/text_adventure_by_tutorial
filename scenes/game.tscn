@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://scripts/command_processor.gd" id="2_1t0v8"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_2kw4x"]
 [ext_resource type="PackedScene" uid="uid://boo6ilnbvv3v" path="res://scenes/game_room.tscn" id="3_4jirj"]
-[ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="3_k8pxv"]
 [ext_resource type="Script" path="res://scripts/room_manager.gd" id="3_kjrjv"]
 [ext_resource type="Script" path="res://scripts/input.gd" id="4_j06qb"]
 [ext_resource type="PackedScene" uid="uid://bisxee73hdwoq" path="res://scenes/game_info.tscn" id="6_nlqif"]
+[ext_resource type="FontFile" uid="uid://cvjwfnon01ipb" path="res://fonts/LTKaraokeBody-Regular.ttf" id="8_q6xie"]
 [ext_resource type="PackedScene" uid="uid://c5vv0hhb12aou" path="res://scenes/side_panel.tscn" id="9_75o5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxl4y"]
@@ -39,77 +39,78 @@ script = ExtResource("2_1t0v8")
 script = ExtResource("3_kjrjv")
 
 [node name="ShedRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 1294.0
-offset_top = -262.0
-offset_right = 1694.0
-offset_bottom = -33.0
+offset_left = 1321.0
+offset_top = -331.0
+offset_right = 1721.0
+offset_bottom = -39.0
 room_name = "a shed"
-room_description = "An old, weathered structure at the edge of town, filled with 
-farming tools and supplies. There is a door to the inn and some storage crates to the west."
+room_description = "An old, weathered structure at the edge of town, filled with  farming tools and supplies. There is a door to the inn and some storage crates to the west."
 
 [node name="BackOfInnRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 811.0
-offset_top = -270.0
-offset_right = 1267.0
-offset_bottom = -20.0
+offset_left = 819.0
+offset_top = -329.0
+offset_right = 1275.0
+offset_bottom = -79.0
 room_name = "the back of the inn"
 room_description = "A quieter, more secluded area, used as storage for the inn. There is a door to the north that leads to the inn, and a path that goes to the village square."
 
 [node name="InnsKitchenRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 803.0
-offset_top = -577.0
-offset_right = 1259.0
-offset_bottom = -285.0
+offset_left = 816.0
+offset_top = -727.0
+offset_right = 1272.0
+offset_bottom = -369.0
 room_name = "the inn's kitchen"
 room_description = "The heart of the inn. The cook isn't anywhere to be found - the room is empty, but pots  simmer, pans sizzle, and aromas of delicious food fill the air. There is a door on the south wall that seems to go outside, and a door to the north back to the inn proper."
 
 [node name="InnRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 815.0
-offset_top = -884.0
-offset_right = 1271.0
-offset_bottom = -592.0
+offset_left = 818.0
+offset_top = -1106.0
+offset_right = 1274.0
+offset_bottom = -748.0
 room_name = "the inn"
 room_description = "Warm and inviting, the inn boasts a roaring fireplace, long wooden tables, and drunk patrons chugging local ale. The inkeeper is standing behind the bar, waiting to serve customers. There is a door to the kitchen to the south, and a door back to the village square to the west."
 
 [node name="InnDoorRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = 332.0
-offset_top = -880.0
-offset_right = 788.0
-offset_bottom = -714.0
+offset_left = 345.0
+offset_top = -1099.0
+offset_right = 801.0
+offset_bottom = -906.0
 room_name = "the inn door"
 room_description = "A creaky wooden entrance to the inn, filled with  laughter and clinking glasses. A sign outside says \"The Happy Chungus\""
 
 [node name="VillageSquareRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = -160.0
-offset_top = -884.0
-offset_right = 296.0
-offset_bottom = -676.0
+offset_left = -186.0
+offset_top = -1119.0
+offset_right = 270.0
+offset_bottom = -893.0
 room_name = "the village square"
 room_description = "The main square of the village, lined with quaint houses. To the south is the path. The main inn door is to the east, and there is a field to the west."
 
 [node name="FieldRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = -673.0
-offset_top = -882.0
-offset_right = -217.0
-offset_bottom = -732.0
+offset_left = -700.0
+offset_top = -1088.0
+offset_right = -244.0
+offset_bottom = -928.0
 room_name = "a field"
 room_description = "A vast expanse of open land next to the village. The village is back to the east."
 
 [node name="TownGateRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = -171.0
-offset_top = -1173.0
-offset_right = 285.0
-offset_bottom = -923.0
+offset_left = -181.0
+offset_top = -1434.0
+offset_right = 275.0
+offset_bottom = -1142.0
 room_name = "the town gate"
 room_description = "The main entrance to the village, guarded by towering stone walls. It leads out to the forest to the north. A guard stands nearby a sturdy wooden gate watching everyone who comes by. The village is back toward the south."
 
 [node name="ForestRoom" parent="RoomManager" instance=ExtResource("3_4jirj")]
-offset_left = -166.0
-offset_top = -1498.0
-offset_right = 290.0
-offset_bottom = -1227.0
+offset_left = -174.0
+offset_top = -1894.0
+offset_right = 282.0
+offset_bottom = -1470.0
 room_name = "the forest"
-room_description = "A dense, mysterious woodland filled with ancient trees and  hidden paths. Whispers of adventure echo through its depths. But... Congratulations! You've made it out of the town... Your journey may continue in the future!"
+room_description = "a dense, mysterious woodland filled with ancient trees and  hidden paths. Whispers of adventure echo through its depths. But... Congratulations! You've made it out of the town... Your journey may continue in the future!
+
+Thank you for your time! Feel free to exit the game now."
 
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -149,15 +150,15 @@ layout_mode = 2
 
 [node name="Caret" type="Label" parent="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_k8pxv")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("8_q6xie")
+theme_override_font_sizes/font_size = 48
 text = " > "
 
 [node name="Input" type="LineEdit" parent="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("3_k8pxv")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("8_q6xie")
+theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cx0ev")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_p1nom")
 max_length = 36

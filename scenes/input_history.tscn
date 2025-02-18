@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dbexhmqfmn2xo"]
 
-[ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="1_wbjww"]
+[ext_resource type="FontFile" uid="uid://cvjwfnon01ipb" path="res://fonts/LTKaraokeBody-Regular.ttf" id="1_u6cig"]
 
 [node name="InputHistory" type="Label"]
 theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
-theme_override_fonts/font = ExtResource("1_wbjww")
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("1_u6cig")
+theme_override_font_sizes/font_size = 32
 text = " > this is what user typed"

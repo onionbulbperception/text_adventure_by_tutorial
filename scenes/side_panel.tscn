@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://d04x6i32ieuxr" path="res://styles/main_panel.tres" id="1_v3qva"]
 [ext_resource type="Script" path="res://scripts/side_panel.gd" id="2_1igxq"]
-[ext_resource type="FontFile" uid="uid://2c4lklsj37yx" path="res://fonts/Xanmono.ttf" id="2_a74lm"]
+[ext_resource type="FontFile" uid="uid://cvjwfnon01ipb" path="res://fonts/LTKaraokeBody-Regular.ttf" id="3_t5exn"]
 
 [node name="SidePanel" type="PanelContainer"]
 theme_override_styles/panel = ExtResource("1_v3qva")
@@ -27,8 +27,8 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.470588, 0.470588, 0.470588, 1)
-theme_override_fonts/font = ExtResource("2_a74lm")
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("3_t5exn")
+theme_override_font_sizes/font_size = 28
 text = "You are in..."
 autowrap_mode = 2
 
@@ -36,16 +36,16 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.309804, 0.278431, 0.537255, 1)
-theme_override_fonts/font = ExtResource("2_a74lm")
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("3_t5exn")
+theme_override_font_sizes/font_size = 28
 text = "A Room"
 autowrap_mode = 2
 
 [node name="RoomDescriptionLabel" type="Label" parent="MarginContainer/Rows"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_a74lm")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("3_t5exn")
+theme_override_font_sizes/font_size = 24
 text = "This will be where the room's description goes"
 autowrap_mode = 2
 
@@ -55,8 +55,8 @@ size_flags_vertical = 3
 
 [node name="ExitLabel" type="RichTextLabel" parent="MarginContainer/Rows/ListArea"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_a74lm")
-theme_override_font_sizes/normal_font_size = 12
+theme_override_fonts/normal_font = ExtResource("3_t5exn")
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Exits: Option"
 fit_content = true
@@ -64,8 +64,8 @@ autowrap_mode = 2
 
 [node name="NpcLabel" type="RichTextLabel" parent="MarginContainer/Rows/ListArea"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_a74lm")
-theme_override_font_sizes/normal_font_size = 12
+theme_override_fonts/normal_font = ExtResource("3_t5exn")
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "NPC: Option"
 fit_content = true
@@ -73,8 +73,8 @@ autowrap_mode = 2
 
 [node name="ItemLabel" type="RichTextLabel" parent="MarginContainer/Rows/ListArea"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_a74lm")
-theme_override_font_sizes/normal_font_size = 12
+theme_override_fonts/normal_font = ExtResource("3_t5exn")
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Items: Option"
 fit_content = true
@@ -84,7 +84,7 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.941176, 0.396078, 0.262745, 1)
-theme_override_fonts/font = ExtResource("2_a74lm")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("3_t5exn")
+theme_override_font_sizes/font_size = 24
 text = "You can type 'help' to see all possible commands."
 autowrap_mode = 2
