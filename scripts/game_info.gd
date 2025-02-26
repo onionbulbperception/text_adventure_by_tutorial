@@ -2,14 +2,9 @@ extends PanelContainer
 
 
 const INPUT_RESPONSE = preload("res://scenes/input_response.tscn")
-
-
 @export var max_lines_remebered = 30
-
-
 var max_scroll_length := 0
 var should_zebra := false
-
 @onready var scroll = $Scroll
 @onready var scrollbar = scroll.get_v_scroll_bar()
 @onready var history_rows = $Scroll/HistoryRows
@@ -50,5 +45,6 @@ func _add_response_to_game(response: Control):
 	history_rows.add_child(response)
 	if not should_zebra:
 		response.zebra.hide()
+		
 	should_zebra = !should_zebra
 	_delete_history_beyond_limit()

@@ -1,5 +1,5 @@
-extends Resource
 class_name Exit
+extends Resource
 
 
 var room_1 = null

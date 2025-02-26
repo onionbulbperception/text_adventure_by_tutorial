@@ -5,13 +5,11 @@ enum ItemTypes {
 	KEY,
 	QUEST_ITEM,
 }
-
-
-const COLOR_NPC = Color("#52DEE5")
-const COLOR_ITEM = Color("#B38CB4")
-const COLOR_SPEECH = Color("#B6C649")
-const COLOR_LOCATION = Color("#4F4789")
-const COLOR_SYSTEM = Color("#F06543")
+const COLOR_NPC = Color("#52dee5")
+const COLOR_ITEM = Color("#b38cb4")
+const COLOR_SPEECH = Color("#b6c649")
+const COLOR_LOCATION = Color("#4f4789")
+const COLOR_SYSTEM = Color("#f06543")
 
 
 func wrap_npc_text(text: String) -> String:

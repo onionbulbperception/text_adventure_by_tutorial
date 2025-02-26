@@ -3,8 +3,6 @@ extends Node
 
 signal room_changed(new_room)
 signal room_updated(current_room)
-
-
 var current_room = null
 var player = null
 
@@ -64,25 +62,28 @@ func go(second_word: String) -> String:
 func take(second_word: String) -> String:
 	if second_word == "":
 		return Types.wrap_system_text("Take what?")
+		
 	for item in current_room.items:
 		if second_word.to_lower() == item.item_name.to_lower():
 			current_room.remove_item(item)
 			player.take_item(item)
 			emit_signal("room_updated", current_room)
 			return "You take the " + Types.wrap_item_text(item.item_name)
-	
+			
 	return "There is no " + Types.wrap_item_text(second_word) + " here."
 
 
 func drop(second_word) -> String:
 	if second_word == "":
 		return Types.wrap_system_text("Drop what?")
+		
 	for item in player.inventory:
 		if second_word.to_lower() == item.item_name.to_lower():
 			player.drop_item(item)
 			current_room.add_item(item)
 			emit_signal("room_updated", current_room)
 			return "You drop the " + Types.wrap_item_text(item.item_name) + "."
+			
 	return "You don't have anything called " + Types.wrap_system_text(second_word) + "."
 
 
@@ -102,7 +103,9 @@ func use(second_word) -> String:
 						if exit == item.use_value:
 							exit.is_locked = false
 							player.drop_item(item)
-							return "You use " + Types.wrap_item_text(second_word) + " to unlock a door to " + Types.wrap_location_text(exit.get_other_room(current_room).room_name)
+							return ("You use " + Types.wrap_item_text(second_word) 
+									+ " to unlock a door to " 
+									+ Types.wrap_location_text(exit.get_other_room(current_room).room_name))
 					return "Your " + Types.wrap_item_text(second_word) + " does not unlock anything here."
 				_:
 					return Types.wrap_system_text("Error - tried to use an item with an invalid type.")
@@ -125,7 +128,7 @@ func talk(second_word: String) -> String:
 func give(second_word: String) -> String:
 	if second_word == "":
 		return Types.wrap_system_text("Give what?")
-	
+		
 	var has_item := false
 	for item in player.inventory:
 		if second_word.to_lower() == item.item_name.to_lower():
@@ -133,7 +136,7 @@ func give(second_word: String) -> String:
 		
 	if not has_item:
 		return "You don't have a " + Types.wrap_item_text(second_word) + "."
-	
+		
 	for npc in current_room.npcs:
 		if npc.quest_item != null and second_word.to_lower() == npc.quest_item.item_name.to_lower():
 			npc.has_received_quest_item = true
@@ -149,7 +152,8 @@ func give(second_word: String) -> String:
 				if second_word.to_lower() == item.item_name.to_lower():
 					player.drop_item(item)
 			
-			return "You give the " + Types.wrap_item_text(second_word) + " to the " + Types.wrap_npc_text(npc.npc_name) + "."
+			return ("You give the " + Types.wrap_item_text(second_word) + " to the " 
+					+ Types.wrap_npc_text(npc.npc_name) + ".")
 	
 	return "Nobody here wants a" + Types.wrap_item_text(second_word) + "."
 
@@ -164,7 +168,7 @@ func help() -> String:
 		" talk " + Types.wrap_npc_text("[npc]"),
 		" give " + Types.wrap_item_text("[item]"),
 		" inventory",
-		" help"])
+		" help",])
 	var help_string = "\n".join(help_strings)
 	return help_string
 

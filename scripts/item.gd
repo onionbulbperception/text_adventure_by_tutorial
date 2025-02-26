@@ -1,11 +1,9 @@
-extends Resource
 class_name Item
+extends Resource
 
 
 @export var item_name : String = "Item name"
 @export var item_type: Types.ItemTypes = Types.ItemTypes.KEY
-
-
 var use_value = null
 
 

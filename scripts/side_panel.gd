@@ -3,10 +3,10 @@ extends PanelContainer
 
 @onready var room_name = $MarginContainer/Rows/TitleSection/RoomNameLabel
 @onready var room_description = $MarginContainer/Rows/RoomDescriptionLabel
-
 @onready var exit_label = $MarginContainer/Rows/ListArea/ExitLabel
 @onready var npc_label = $MarginContainer/Rows/ListArea/NpcLabel
 @onready var item_label = $MarginContainer/Rows/ListArea/ItemLabel
+
 
 func handle_room_changed(new_room):
 	room_name.text = new_room.room_name

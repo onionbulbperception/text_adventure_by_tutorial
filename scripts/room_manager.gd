@@ -35,5 +35,6 @@ func _ready() -> void:
 func load_item(item_name: String):
 	return load("res://items/" + item_name + ".tres")
 
+
 func load_npc(npc_name: String):
 	return load("res://npcs/" + npc_name + ".tres")

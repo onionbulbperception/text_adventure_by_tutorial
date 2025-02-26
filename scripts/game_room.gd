@@ -1,12 +1,10 @@
 @tool
-extends PanelContainer
 class_name GameRoom
+extends PanelContainer
 
 
 @export var room_name : String = "Room Name" : set = set_room_name
 @export_multiline var room_description : String = "This is the description of the room." : set = set_room_description
-
-
 var exits: Dictionary = {}
 var npcs: Array = []
 var items: Array = []
@@ -57,9 +55,11 @@ func get_room_description() -> String:
 func get_npc_description() -> String:
 	if npcs.size() == 0:
 		return ""
+		
 	var npc_string = ""
 	for npc in npcs:
 		npc_string += Types.wrap_npc_text(npc.npc_name) + " "
+		
 	return "NPCs: " + npc_string
 
 
