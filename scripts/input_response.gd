@@ -6,7 +6,7 @@ extends MarginContainer
 @onready var response_label = $Rows/Response
 
 
-func set_text(response: String, input: String = ""):
+func set_text(response: String, input: String = "") -> void:
 	if input == "":
 		input_label.queue_free()
 	else:

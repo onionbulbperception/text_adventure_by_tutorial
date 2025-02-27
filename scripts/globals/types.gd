@@ -5,6 +5,7 @@ enum ItemTypes {
 	KEY,
 	QUEST_ITEM,
 }
+
 const COLOR_NPC = Color("#52dee5")
 const COLOR_ITEM = Color("#b38cb4")
 const COLOR_SPEECH = Color("#b6c649")

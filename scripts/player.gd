@@ -4,11 +4,11 @@ extends Node
 var inventory: Array = []
 
 
-func take_item(item: Item):
+func take_item(item: Item) -> void:
 	inventory.append(item)
 
 
-func drop_item(item: Item):
+func drop_item(item: Item) -> void:
 	inventory.erase(item)
 
 

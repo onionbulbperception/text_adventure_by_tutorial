@@ -3,6 +3,7 @@ extends Node
 
 signal room_changed(new_room)
 signal room_updated(current_room)
+
 var current_room = null
 var player = null
 
@@ -170,6 +171,7 @@ func help() -> String:
 		" inventory",
 		" help",])
 	var help_string = "\n".join(help_strings)
+	
 	return help_string
 
 

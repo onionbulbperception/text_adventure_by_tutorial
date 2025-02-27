@@ -32,9 +32,9 @@ func _ready() -> void:
 	guard.quest_reward = exit
 
 
-func load_item(item_name: String):
+func load_item(item_name: String) -> Resource:
 	return load("res://items/" + item_name + ".tres")
 
 
-func load_npc(npc_name: String):
+func load_npc(npc_name: String) -> Resource:
 	return load("res://npcs/" + npc_name + ".tres")

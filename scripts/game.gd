@@ -12,8 +12,7 @@ func _ready() -> void:
 	command_processor.room_changed.connect(Callable(side_panel, "handle_room_changed"))
 	command_processor.room_updated.connect(Callable(side_panel, "handle_room_updated"))
 	
-	game_info.create_response(Types.wrap_system_text("Welcome to the unnamed text adventure! You can
-													 type 'help' to see available commands."))
+	game_info.create_response(Types.wrap_system_text("Welcome to the unnamed text adventure! You can type 'help' to see available commands."))
 	
 	var starting_room_response = command_processor.initialize(room_manager.get_child(0), player)
 	game_info.create_response(starting_room_response)

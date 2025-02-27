@@ -8,7 +8,7 @@ extends PanelContainer
 @onready var item_label = $MarginContainer/Rows/ListArea/ItemLabel
 
 
-func handle_room_changed(new_room):
+func handle_room_changed(new_room) -> void:
 	room_name.text = new_room.room_name
 	room_description.text = new_room.room_description
 	exit_label.bbcode_text = new_room.get_exit_description()
@@ -28,5 +28,5 @@ func handle_room_changed(new_room):
 		item_label.bbcode_text = item_string
 
 
-func handle_room_updated(current_room):
+func handle_room_updated(current_room) -> void:
 	handle_room_changed(current_room)

@@ -5,30 +5,31 @@ extends PanelContainer
 
 @export var room_name : String = "Room Name" : set = set_room_name
 @export_multiline var room_description : String = "This is the description of the room." : set = set_room_description
+
 var exits: Dictionary = {}
 var npcs: Array = []
 var items: Array = []
 
 
-func set_room_name(new_name: String):
+func set_room_name(new_name: String) -> void:
 	$MarginContainer/Rows/RoomName.text = new_name
 	room_name = new_name
 
 
-func set_room_description(new_description: String):
+func set_room_description(new_description: String) -> void:
 	$MarginContainer/Rows/RoomDescription.text = new_description
 	room_description = new_description
 
 
-func add_npc(npc: NPC):
+func add_npc(npc: NPC) -> void:
 	npcs.append(npc)
 
 
-func add_item(item: Item):
+func add_item(item: Item) -> void:
 	items.append(item)
 
 
-func remove_item(item: Item):
+func remove_item(item: Item) -> void:
 	items.erase(item)
 
 
@@ -80,15 +81,15 @@ func get_exit_description() -> String:
 	return "Exits: " + Types.wrap_location_text(exit_srting)
 
 
-func connect_exit_unlocked(direction: String, room: GameRoom, room_2_override_name = "null"):
+func connect_exit_unlocked(direction: String, room: GameRoom, room_2_override_name = "null") -> Resource:
 	return _connect_exit(direction, room, false, room_2_override_name)
 
 
-func connect_exit_locked(direction: String, room: GameRoom, room_2_override_name = "null"):
+func connect_exit_locked(direction: String, room: GameRoom, room_2_override_name = "null") -> Resource:
 	return _connect_exit(direction, room, true, room_2_override_name)
 
 
-func _connect_exit(direction: String, room: GameRoom, is_locked: bool = false, room_2_override_name = "null"):
+func _connect_exit(direction: String, room: GameRoom, is_locked: bool = false, room_2_override_name = "null") -> Resource:
 	var exit = Exit.new()
 	exit.room_1 = self
 	exit.room_2 = room
